@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Evolution nombre d'étudiants</title>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.0.1/Chart.bundle.js"></script>
+    <style>
+    canvas {
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+    }
+    </style>
+</head>
+
+<body>
+    <div style="width: 95%">
+        <canvas id="canvas"></canvas>
+    </div>
+    <button id="addDataset">Add Random Dataset</button>
+    
+    <script>
+        var randomScalingFactor = function() {
+            return Math.round(Math.random() * 100) * 11;
+            //return 0;
+        };
+        var randomColorFactor = function() {
+            return Math.round(Math.random() * 255);
+        };
+        var randomColor = function(opacity) {
+            return 'rgba(' + randomColorFactor() + ',' + randomColorFactor() + ',' + randomColorFactor() + ',' + (opacity || '.3') + ')';
+        };
+        var barChartData = {
+            labels: [1982, 1983, 1984, 1985, 1986, 1987, 1988, 1989, 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015],
+            datasets: [{
+                label: 'STI',
+                backgroundColor: "rgba(230,220,220,0.5)",
+                data: [943, 1009, 917, 964, 1032, 1074, 1119, 1157, 1176, 1224, 1229, 1257, 1292, 1320, 1336, 1259, 1263, 1368, 1438, 1479, 1564, 1692, 1724, 1693, 1705, 1699, 1780, 1920, 2084, 2224, 2475, 2696, 2773, 2973]
+            }, {
+                label: 'IC',
+                backgroundColor: "rgba(210,220,220,0.5)",
+                data: [73, 99, 381, 364, 395, 359, 356, 315, 326, 407, 490, 539, 586, 557, 580, 752, 916, 1083, 1221, 1349, 1398, 1387, 1267, 1171, 1068, 962, 925, 932, 1041, 1171, 1284, 1378, 1418, 1404]
+            }, {
+                label: 'ENAC',
+                backgroundColor: "rgba(190,187,205,0.5)",
+                data: [742, 799, 860, 909, 955, 1002, 1052, 1159, 1294, 1384, 1443, 1548, 1569, 1524, 1474, 1443, 1374, 1366, 1374, 1333, 1395, 1417, 1536, 1524, 1629, 1651, 1794, 1938, 2117, 2329, 2458, 2540, 2463, 2386]
+            }, {
+                label: 'SB',
+                backgroundColor: "rgba(170,187,205,0.5)",
+                data: [609, 698, 648, 675, 713, 709, 675, 672, 722, 747, 750, 850, 848, 801, 795, 848, 865, 865, 866, 1019, 1139, 1332, 1375, 1338, 1287, 1290, 1400, 1472, 1549, 1686, 1877, 1911, 1920, 1988]
+            }, {
+                label: 'SV',
+                backgroundColor: "rgba(150,187,205,0.5)",
+                data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 148, 280, 364, 468, 550, 603, 643, 704, 763, 885, 956, 978, 1007]
+            }, {
+                label: 'CDM',
+                backgroundColor: "rgba(130,187,205,0.5)",
+                data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 72, 92, 146, 149, 179, 193, 244, 257, 267, 249, 287, 348, 334, 331]
+            }, {
+                label: 'TOTAL',
+                backgroundColor: "rgba(220,220,220,0)",
+                type: "line",
+                data: [2367, 2605, 2806, 2912, 3095, 3144, 3202, 3303, 3518, 3762, 3912, 4194, 4295, 4202, 4185, 4302, 4418, 4682, 4899, 5180, 5573, 6068, 6328, 6239, 6336, 6345, 6746, 7162, 7762, 8442, 9306, 9868, 9921, 10124]
+            }
+          ]
+        };
+
+        window.onload = function() {
+            var ctx = document.getElementById("canvas").getContext("2d");
+            window.myBar = new Chart(ctx, {
+                type: 'bar',
+                data: barChartData,
+                options: {
+                    title:{
+                        display:true,
+                        text:"EPFL - Evolution nbr étudiants"
+                    },
+                    responsive: true,
+                    scales: {
+                        xAxes: [{
+                            stacked: true,
+                        }],
+                        yAxes: [{
+                            stacked: true
+                        }]
+                    }
+                }
+            });
+            
+            $('#addDataset').click(function() {
+                var newDataset = {
+                    label: 'Dataset ' + barChartData.datasets.length,
+                    borderColor: randomColor(0.4),
+                    backgroundColor: randomColor(0.5),
+                    pointBorderColor: randomColor(0.7),
+                    pointBackgroundColor: randomColor(0.5),
+                    pointBorderWidth: 1,
+                    data: [],
+                };
+                for (var index = 0; index < barChartData.labels.length; ++index) {
+                    newDataset.data.push(randomScalingFactor());
+                }
+                barChartData.datasets.push(newDataset);
+                window.myBar.update();
+            });
+        };
+    </script>
+</body>
+
+</html>
