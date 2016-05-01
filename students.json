@@ -2,7 +2,7 @@
   {
     "title": "Nombre d'étudiants bachelor",
     "version": "v10.1115",
-    "src_url": "http://vpri.epfl.ch/files/content/sites/vpplnew/files/shared/Stat%202015/Etudiants%202015xlsm",
+    "src_url": "http://vpri.epfl.ch/files/content/sites/vpplnew/files/shared/Stat%202015/Etudiants%202015.xlsm",
     "info_url": "http://vpri.epfl.ch/chiffres",
     "comments": "Dès 2005 : étudiants bachelor. Avant 2005 : étudiants en voie diplôme de 1ère à 3ème année + premiers étudiants bachelors en 2003 et 2004",
     "data":
@@ -157,7 +157,7 @@
   {
     "title": "Nombre d'étudiants master",
     "version": "v10.1115",
-    "src_url": "http://vpri.epfl.ch/files/content/sites/vpplnew/files/shared/Stat%202015/Etudiants%202015xlsm",
+    "src_url": "http://vpri.epfl.ch/files/content/sites/vpplnew/files/shared/Stat%202015/Etudiants%202015.xlsm",
     "info_url": "http://vpri.epfl.ch/chiffres",
     "comments": "Dès 2005 : étudiants master. Avant 2005 : étudiants en voie diplôme après la 3ème année",
     "data":
@@ -312,7 +312,7 @@
   {
     "title": "Nombre d'étudiants en voie diplôme/bachelor+master (Sous-Total)",
     "version": "v10.1115",
-    "src_url": "http://vpri.epfl.ch/files/content/sites/vpplnew/files/shared/Stat%202015/Etudiants%202015xlsm",
+    "src_url": "http://vpri.epfl.ch/files/content/sites/vpplnew/files/shared/Stat%202015/Etudiants%202015.xlsm",
     "info_url": "http://vpri.epfl.ch/chiffres",
     "comments": "Dès 2005, la voie diplôme a été supprimée et remplacée par les bachelor/master. En 2003 et 2004, la voie diplôme coexistait avec les premiers étudiants bachelor.",
     "data":
@@ -467,7 +467,7 @@
   {
     "title": "Nombre de doctorants",
     "version": "v10.1115",
-    "src_url": "http://vpri.epfl.ch/files/content/sites/vpplnew/files/shared/Stat%202015/Etudiants%202015xlsm",
+    "src_url": "http://vpri.epfl.ch/files/content/sites/vpplnew/files/shared/Stat%202015/Etudiants%202015.xlsm",
     "info_url": "http://vpri.epfl.ch/chiffres",
     "comments": "",
     "data":
@@ -622,7 +622,7 @@
   {
     "title": "Nombre d'étudiants en formation continue (MAS)",
     "version": "v10.1115",
-    "src_url": "http://vpri.epfl.ch/files/content/sites/vpplnew/files/shared/Stat%202015/Etudiants%202015xlsm",
+    "src_url": "http://vpri.epfl.ch/files/content/sites/vpplnew/files/shared/Stat%202015/Etudiants%202015.xlsm",
     "info_url": "http://vpri.epfl.ch/chiffres",
     "comments": "",
     "data":
@@ -777,7 +777,7 @@
   {
     "title": "Nombre total d'étudiants",
     "version": "v10.1115",
-    "src_url": "http://vpri.epfl.ch/files/content/sites/vpplnew/files/shared/Stat%202015/Etudiants%202015xlsm",
+    "src_url": "http://vpri.epfl.ch/files/content/sites/vpplnew/files/shared/Stat%202015/Etudiants%202015.xlsm",
     "info_url": "http://vpri.epfl.ch/chiffres",
     "comments": "",
     "data":
